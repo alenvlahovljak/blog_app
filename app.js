@@ -7,7 +7,6 @@ var expressSanitizer = require("express-sanitizer");
 
 //define PORT
 var PORT = process.env.PORT;
-if (PORT == null || port == "") PORT = 3000;
 
 //App config
 mongoose.connect("mongodb://localhost:27017/blog_app", { useNewUrlParser: true });
