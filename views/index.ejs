@@ -6,7 +6,11 @@
             <%for(var i=0; i<blogs.length; i++){%>
                 <div class="item">
                     <div class="image">
-                        <img src="<%=blogs[i].image%>">
+                        <%if(blogs[i].image.length == 0){%>
+                        <img class="ui centered rounded image" src="/images/default-blog.png" src="No image to show" />
+                        <%} else{%>
+                        <img class="ui centered rounded image" src="<%=blogs[i].image%>" src="<%=blogs[i].title%>'s image" />
+                        <%}%>
                     </div>
                     <div class="content">
                         <a class="header" href="/blogs/<%=blogs[i]._id%>"><%=blogs[i].title%></a>

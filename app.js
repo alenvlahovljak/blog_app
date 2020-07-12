@@ -6,11 +6,11 @@ var methodOverride = require("method-override");
 var expressSanitizer = require("express-sanitizer");
 
 //define constants
-var PORT = process.env.PORT;
+var PORT = process.env.PORT || 3000;
 var ATLAS_DB = process.env.ATLAS_DB;
 
 //App config
-mongoose.connect(ATLAS_DB, { useNewUrlParser: true });
+mongoose.connect(ATLAS_DB || "mongodb://localhost:27017/blog_app", { useNewUrlParser: true });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -71,6 +71,7 @@ app.post("/blogs", function (req, res) {
 //SHOW route
 app.get("/blogs/:id", function (req, res) {
 	Blog.findById(req.params.id, function (err, foundBlog) {
+		console.log("BLOg", foundBlog.image.length == 0);
 		if (err) res.redirect("index");
 		else res.render("show", { blog: foundBlog });
 	});

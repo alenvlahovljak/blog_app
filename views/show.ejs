@@ -3,7 +3,11 @@
 	<div class="ui huge header"><%=blog.title%></div>
 	<div class="ui top attached segment">
 		<div class="item">
-			<img class="ui centered rounded image" src="<%=blog.image%>" />
+			<%if(blog.image.length == 0){%>
+			<img class="ui centered rounded image" src="/images/default-blog.png" src="No image to show" />
+			<%} else{%>
+			<img class="ui centered rounded image" src="<%=blog.image%>" src="<%=blog.title%>'s image" />
+			<%}%>
 			<div class="content">
 				<span style="margin-top: 1rem; margin-bottom: 0.5rem;"><b><%=blog.created.toDateString()%></b></span>
 			</div>
