@@ -5,11 +5,12 @@ var mongoose = require("mongoose");
 var methodOverride = require("method-override");
 var expressSanitizer = require("express-sanitizer");
 
-//define PORT
+//define constants
 var PORT = process.env.PORT;
+var ATLAS_DB = process.env.ATLAS_DB;
 
 //App config
-mongoose.connect("mongodb://localhost:27017/blog_app", { useNewUrlParser: true });
+mongoose.connect(ATLAS_DB, { useNewUrlParser: true });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
