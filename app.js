@@ -104,6 +104,6 @@ app.delete("/blogs/:id", function (req, res) {
 	});
 });
 
-app.listen(3000, function () {
+app.listen(PORT, function () {
 	console.log(`Blog app has started on port ${PORT}!`);
 });
