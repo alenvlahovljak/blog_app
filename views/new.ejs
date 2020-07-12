@@ -1,20 +1,20 @@
 <%include ./partials/header%>
 <div class="ui main text container segment">
-    <div class="ui huge header">New Blog</div>
-    <form class="ui form" action="/blogs" method="post">
-        <div class="field">
-            <label for="">Title</label>
-            <input type="text" name="blog[title]" placeholder="title">
-        </div>
-        <div class="field">
-            <label for="">Image</label>
-            <input type="text" name="blog[image]" placeholder="image">
-        </div>
-        <div class="field">
-            <label for="">Title</label>
-            <textarea required="required" name="blog[body]"></textarea>
-        </div>
-        <input type="submit" class="ui green button">
-    </form>
+	<div class="ui huge header">New Blog</div>
+	<form class="ui form" action="/blogs" method="post">
+		<div class="field">
+			<label for="">Title</label>
+			<input type="text" name="blog[title]" placeholder="title" />
+		</div>
+		<div class="field">
+			<label for="">Image</label>
+			<input type="text" name="blog[image]" placeholder="image" />
+		</div>
+		<div class="field">
+			<label for="">Blog Content</label>
+			<textarea required="required" name="blog[body]"></textarea>
+		</div>
+		<input type="submit" class="ui green button" />
+	</form>
 </div>
 <%include ./partials/footer%>
